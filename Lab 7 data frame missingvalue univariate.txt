@@ -1,0 +1,213 @@
+In [1]: import pandas as pd
+In [25]: df1 = pd.read_excel('b2.xlsx')
+In [4]: print(df1)
+0
+1
+2
+3
+4
+
+Name
+Ankit
+Rahul
+Shaurya
+Raghu
+Priya
+
+Age
+18
+19
+20
+18
+19
+
+Stream
+Math
+Science
+Commerce
+Math
+Science
+
+Percentage
+95
+85
+85
+80
+75
+
+In [5]: df1.dtypes
+Out[5]:
+
+Name
+object
+Age
+int64
+Stream
+object
+Percentage
+int64
+dtype: object
+
+In [6]: df1['Percentage'].mean()
+Out[6]:
+
+84.0
+
+In [7]: df1['Percentage'].median()
+Out[7]:
+
+85.0
+
+In [8]: df1['Percentage'].mode()
+Out[8]:
+
+0
+85
+Name: Percentage, dtype: int64
+
+In [9]: df1['Percentage'].var()
+Out[9]:
+
+55.0
+
+In [10]: df1['Percentage'].std()
+Out[10]:
+
+7.416198487095663
+
+In [11]: df1.describe()
+Out[11]:
+
+Age
+
+Percentage
+
+count
+
+5.00000
+
+5.000000
+
+mean
+
+18.80000
+
+84.000000
+
+std
+
+0.83666
+
+7.416198
+
+min
+
+18.00000
+
+75.000000
+
+25%
+
+18.00000
+
+80.000000
+
+50%
+
+19.00000
+
+85.000000
+
+75%
+
+19.00000
+
+85.000000
+
+max
+
+20.00000
+
+95.000000
+
+Loading [MathJax]/extensions/Safe.js
+
+In [27]: df2 =pd.read_excel('b2.xlsx',sheet_name =1)
+In [28]: print(df2)
+0
+1
+2
+3
+
+name
+akhil
+banu
+ravi
+pooja
+
+marks
+80
+76
+NaN
+45
+
+In [29]: require_cols=[0,2]
+In [31]: required_df = pd.read_excel('b2.xlsx',usecols = require_cols)
+In [32]: print(required_df)
+0
+1
+2
+3
+4
+
+name
+ankit
+rahul
+shaurya
+raghu
+priya
+
+stream
+math
+science
+commerce
+math
+science
+
+In [33]: df = pd.read_excel('b2.xlsx',sheet_name = 1)
+In [34]: print(df)
+0
+1
+2
+3
+
+name
+akhil
+banu
+ravi
+pooja
+
+marks
+80
+76
+NaN
+45
+
+In [35]: df['marks'].fillna(method='ffill')
+Out[35]:
+
+0
+80
+1
+76
+2
+NaN
+3
+45
+Name: marks, dtype: object
+
+In [ ]:
+
+Loading [MathJax]/extensions/Safe.js
+
+
